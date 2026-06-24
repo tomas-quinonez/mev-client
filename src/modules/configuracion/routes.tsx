@@ -1,16 +1,19 @@
 import { EnvironmentOutlined, GlobalOutlined } from "@ant-design/icons";
-import { lazy } from "react"; 
+import { lazy } from "react";
 import CiudadesView from "./ciudades/CiudadesView";
-const DepartamentosView = lazy(() =>
-  import("@modules/configuracion/departamentos/DepartamentosView")
+const OrganismosView = lazy(
+  () => import("@modules/configuracion/organismos/OrganismosView"),
 );
-
 
 const configuracionRoutes = {
   path: "configuracion",
-  children: [ 
-  { path: "Departamentos", element: <DepartamentosView /> , icon :  <EnvironmentOutlined/>},
-  { path: "Ciudades", element: <CiudadesView/> , icon: <GlobalOutlined/> },  
+  children: [
+    {
+      path: "Organismos",
+      element: <OrganismosView />,
+      icon: <EnvironmentOutlined />,
+    },
+    { path: "Ciudades", element: <CiudadesView />, icon: <GlobalOutlined /> },
   ],
 };
 

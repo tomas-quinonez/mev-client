@@ -4,13 +4,6 @@ interface ListResult<T> {
   elements: Array<T>;
 }
 
-interface DepartamentoDTO {
-  id: number;
-  codigo: string;
-  descripcion: string;
-  idDepartamento?: number;
-}
-
 interface CiudadDTO {
   id: number;
   nombre: string;
@@ -23,8 +16,26 @@ interface InputCiudad {
   codigo: string;
 }
 
-interface InputDepartamento {
-  id?: number;
+interface OrganismoDTO {
+  id: number;
+  nombre: string;
   codigo: string;
-  descripcion: string;
+  titulo: string;
+  nombreCiudad: number;
+  nombreFuero: number;
+}
+
+interface InputOrganismo {
+  id: number;
+  nombre: string;
+  codigo: string;
+  titulo: string;
+  idCiudad: number;
+  idFuero: number;
+}
+
+interface FueroDTO {
+  id: number;
+  nombre: string;
+  codigo: string;
 }

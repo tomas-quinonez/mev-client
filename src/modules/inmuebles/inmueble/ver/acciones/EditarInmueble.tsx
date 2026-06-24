@@ -1,5 +1,5 @@
 import { useQuery } from "@hooks/useQuery";
-import CiudadComboBox from "@modules/inmuebles/components/CiudadComboBox";
+import CiudadComboBox from "@components/combobox/CiudadComboBox";
 import DepartamentoComboBox from "@modules/inmuebles/components/DepartamentoComboBox";
 import { request } from "@utils/axiosInstance";
 import { Button, Flex, Form, Input, message } from "antd"; 

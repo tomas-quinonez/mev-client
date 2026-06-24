@@ -13,17 +13,17 @@ export default function CiudadComboBox(props: Readonly<SelectProps>) {
     data?.map((item: CiudadDTO) => {
       return {
         value: item.id,
-        label: item.codigo + " - " + item.descripcion,
+        label: item.codigo + " - " + item.nombre,
       };
-    }) ?? []; 
-  
+    }) ?? [];
+
   return (
     <div className="flex gap-2">
       <Select
         options={options}
         showSearch
         allowClear
-        placeholder="Seleccione una ciudad" 
+        placeholder="Seleccione una ciudad"
         {...props}
       />
     </div>
