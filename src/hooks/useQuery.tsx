@@ -2,11 +2,15 @@ import { useCallback, useState } from "react";
 
 type ErrorResult = string | null;
 type DataResult<T> = T | null;
-type QueryResult<T> = { loading: boolean; error: ErrorResult; data: DataResult<T> };
+type QueryResult<T> = {
+  loading: boolean;
+  error: ErrorResult;
+  data: DataResult<T>;
+};
 
 export function useQuery<T = any>(
   callback: (...params: any[]) => Promise<any>,
-  options: { initLoading: boolean } = { initLoading: false }
+  options: { initLoading: boolean } = { initLoading: false },
 ): [(...params: any[]) => Promise<QueryResult<T>>, QueryResult<T>] {
   const { initLoading = false } = options;
   const [loading, setLoading] = useState<boolean>(initLoading);
@@ -31,13 +35,13 @@ export function useQuery<T = any>(
         .catch((e) => {
           console.error("[ERROR] || useQuery || e", e);
           if (e.message) {
-            errorAux = e.message;
+            errorAux = e.response.data.message;
           } else {
             errorAux =
               "El servidor no pudo responder su solicitud. Intente nuevamente o comuníquese con soporte.";
           }
           setError(errorAux);
-          throw new Error(e);
+          throw e;
         })
         .finally(() => {
           loadingAux = false;
@@ -46,7 +50,7 @@ export function useQuery<T = any>(
 
       return { loading: loadingAux, error: errorAux, data: dataAux };
     },
-    [callback]
+    [callback],
   );
 
   return [queryCall, { loading, error, data }];

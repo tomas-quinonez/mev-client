@@ -19,19 +19,18 @@ function renderAcciones(item: any, afterCrud: () => void) {
 const getColumns = (afterCrud: () => void): ColumnsType<CiudadDTO> => {
   return [
     {
+      key: "nombre",
+      title: "Nombre",
+      dataIndex: "nombre",
+      width: "250px",
+    },
+    {
       key: "codigo",
       title: "Código",
       dataIndex: "codigo",
+      align: "center",
       width: "100px",
     },
-    {
-      key: "descripcion",
-      title: "Descripción",
-      dataIndex: "descripcion",
-      align: "center",
-      width: "250px",
-    },
-
     {
       key: "acciones",
       title: "Acciones",
@@ -44,8 +43,8 @@ const getColumns = (afterCrud: () => void): ColumnsType<CiudadDTO> => {
 };
 
 export default function CiudadesView() {
-  const [getCiudades, {data }] = useQuery(() =>
-    request(`/api/configuracion/ciudades`)
+  const [getCiudades, { data }] = useQuery(() =>
+    request(`/api/configuracion/ciudades`),
   );
 
   useEffect(() => {

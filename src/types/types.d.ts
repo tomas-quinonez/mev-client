@@ -13,15 +13,14 @@ interface DepartamentoDTO {
 
 interface CiudadDTO {
   id: number;
+  nombre: string;
   codigo: string;
-  descripcion: string;
-  idDepartamento: number;
 }
 
 interface InputCiudad {
   id?: number;
+  nombre: string;
   codigo: string;
-  descripcion: string;
 }
 
 interface InputDepartamento {

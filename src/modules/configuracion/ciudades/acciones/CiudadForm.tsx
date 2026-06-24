@@ -13,18 +13,24 @@ export default function CiudadForm({
   onClose,
   afterCrud,
 }: Readonly<Props>) {
-  const [upsertCiudad] = useQuery<number>((inputCiudad: any) =>
-    request("/api/configuracion/ciudades/save", inputCiudad)
+  const [upsertCiudad] = useQuery<number>((inputCiudad: InputCiudad) =>
+    request("/api/configuracion/ciudades/save", inputCiudad),
   );
 
   const onFinish: FormProps<InputCiudad>["onFinish"] = async (values) => {
     values.id = input?.id ?? 0;
-    await upsertCiudad(values);
-    message.success(
-      `Ciudad ${values.id ? "actualizada" : "creada"} exitosamente.`
-    );
-    afterCrud();
-    onClose();
+    try {
+      await upsertCiudad(values);
+      message.success(
+        `Ciudad ${values.id ? "actualizada" : "creada"} exitosamente.`,
+      );
+      afterCrud();
+      onClose();
+    } catch (e: any) {
+      message.error(
+        e?.response?.data?.message ?? "Ocurrió un error al insertar la ciudad.",
+      );
+    }
   };
 
   return (
@@ -36,12 +42,12 @@ export default function CiudadForm({
       initialValues={input ?? {}}
     >
       <Form.Item<InputCiudad>
-        label="Código"
-        name="codigo"
+        label="Nombre"
+        name="nombre"
         rules={[
           {
             required: true,
-            message: "Por favor ingrese el codigo",
+            message: "Por favor ingrese el nombre",
           },
         ]}
       >
@@ -49,12 +55,12 @@ export default function CiudadForm({
       </Form.Item>
 
       <Form.Item<InputCiudad>
-        label="Descripción"
-        name="descripcion"
+        label="Código"
+        name="codigo"
         rules={[
           {
             required: true,
-            message: "Por favor ingrese la descripcion",
+            message: "Por favor ingrese el codigo",
           },
         ]}
       >
