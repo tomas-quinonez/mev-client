@@ -1,5 +1,5 @@
 import { ReactElement, useState } from "react";
-import RpiDrawer from "@components/form/Drawer";
+import MevDrawer from "@components/form/Drawer";
 
 export interface ButtonDrawerProps {
   contentRenderer: (props: { onClose: () => void }) => ReactElement;
@@ -35,7 +35,7 @@ export default function ButtonDrawer({
   return (
     <>
       {button}
-      <RpiDrawer
+      <MevDrawer
         title={title}
         opened={openDrawer}
         onClose={() => handleCloseDrawer()}

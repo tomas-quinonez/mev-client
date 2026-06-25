@@ -8,7 +8,7 @@ export interface Props {
   title: string;
 }
 
-const RpiDrawer: React.FC<Props> = ({
+const MevDrawer: React.FC<Props> = ({
   contentRenderer,
   title,
   opened,
@@ -33,4 +33,4 @@ const RpiDrawer: React.FC<Props> = ({
   );
 };
 
-export default RpiDrawer;
+export default MevDrawer;
