@@ -44,7 +44,7 @@ project/
 ## 📦 Instalación
 
 Clonar el repositorio e instalar dependencias:
-git clone https://github.com/tomas-quinonez/mev-client
+git clone https://github.com/tomas-quinonez/mev-client.git
 
 ```bash
 npm install
