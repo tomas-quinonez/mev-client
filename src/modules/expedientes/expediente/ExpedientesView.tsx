@@ -76,7 +76,7 @@ const getColumns = (afterCrud: () => void): ColumnsType<ExpedienteDTO> => {
 };
 
 export default function ExpedientesView() {
-  const [filtros, setFiltros] = useState<FiltrosExpediente>();
+  const [filtros, setFiltros] = useState<FiltrosExpediente>({});
 
   const [getExpedientes, { loading, data }] = useQuery(
     (filtros: FiltrosExpediente) => request(`/api/expedientes`, filtros),

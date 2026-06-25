@@ -1,5 +1,6 @@
 import { Button, Form, Input } from "antd";
 import { FormProps, useWatch } from "antd/es/form/Form";
+import { useEffect } from "react";
 
 type FiltrosBuscarViewProps = {
   loading: boolean;
@@ -17,6 +18,10 @@ export default function FiltroBuscarPersonas({
   const onFinish: FormProps<FiltrosPersona>["onFinish"] = (values) => {
     onBuscar(values);
   };
+
+  useEffect(() => {
+    onBuscar({});
+  }, [onBuscar]);
 
   return (
     <Form
