@@ -1,9 +1,9 @@
-# DGI- RPI 
+# DGI- MEV 
 
 # 🌐 Frontend con Vite + React + Ant Design + TypeScript
 
 Este proyecto es una aplicación frontend creada con **Vite**, utilizando **React**, **Ant Design (antd)** para la UI y **TypeScript** para proporcionar tipado estático y mayor robustez en el desarrollo.
-Proyecto para RPI. Concurso Programador/a de Aplicaciones Informáticas Senior MF6 
+Proyecto para Mesa de Entradas Virtual. Concurso Programador/a de Aplicaciones Informáticas MF7
  
 ---
 
@@ -44,7 +44,7 @@ project/
 ## 📦 Instalación
 
 Clonar el repositorio e instalar dependencias:
-git clone https://github.com/dgi-rpi/dgi-rpi-client.git
+git clone https://github.com/tomas-quinonez/mev-client
 
 ```bash
 npm install

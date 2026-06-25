@@ -14,7 +14,7 @@ export default defineConfig(function (_a) {
         server: {
             port: Number.parseInt("9001"),
         },
-        base: "/rpi-client",
+        base: "/mev-client",
         resolve: {
             alias: {
                 "@": root,

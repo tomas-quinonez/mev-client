@@ -1,6 +1,6 @@
 export default {
-  appTitle:   "Registro de la Propiedad Inmueble",
-  baseUrl:  `/rpi-client` ,
+  appTitle: "Mesa de Entradas Virtual",
+  baseUrl: `/mev-client`,
   serverUrl: "http://localhost:9100",
 };
 
@@ -10,4 +10,4 @@ export const FULL_PAGE_SIZES = [10, 20, 30, 40, 50];
 export const LOGIN_MODE = {
   LOGIN_REQUIRED: "login-required",
   LOGIN_OPTIONAL: "login-optional",
-}
+};

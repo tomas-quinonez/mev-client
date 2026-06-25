@@ -16,7 +16,7 @@ export default defineConfig(({ command, mode }) => {
     server: {
       port: parseInt("9001"),
     },
-    base:   `/rpi-client`,
+    base: `/mev-client`,
     resolve: {
       alias: {
         "@": root,
