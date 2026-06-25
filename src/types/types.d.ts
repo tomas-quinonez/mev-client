@@ -28,7 +28,6 @@ interface OrganismoDTO {
 interface InputOrganismo {
   id: number;
   nombre: string;
-  codigo: string;
   titulo: string;
   idCiudad: number;
   idFuero: number;

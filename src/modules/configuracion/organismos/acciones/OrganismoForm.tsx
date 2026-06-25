@@ -45,19 +45,6 @@ export default function OrganismoForm({
       initialValues={input ?? {}}
     >
       <Form.Item<InputOrganismo>
-        label="Código"
-        name="codigo"
-        rules={[
-          {
-            required: true,
-            message: "Por favor ingrese el codigo",
-          },
-        ]}
-      >
-        <Input allowClear />
-      </Form.Item>
-
-      <Form.Item<InputOrganismo>
         label="Nombre"
         name="nombre"
         rules={[
