@@ -1,14 +1,8 @@
 interface PersonaDTO {
   id: number;
-  nombres: string;
-  apellidos: string;
-  email: string;
-  telefono: string;
-  direccion: string;
-  fecha_nacimiento: string;
-  usuario: string;
-  password: string;
-  rol: string;
+  nombre: string;
+  apellido: string;
+  dni: string;
   createdAt: string;
   updatedAt: string;
 }
@@ -16,20 +10,15 @@ interface PersonaDTO {
 interface FiltrosPersona {
   nombre?: string;
   apellido?: string;
-  cuit?: string;
+  dni?: string;
 }
 
 interface InputPersona  {
   id?: number;
-  nombres: string;
-  apellidos: string;
-  nroDoc?: string;
-  email?: string;
-  telefono?: string;
-  direccion: string;
-  fechaNacimiento?: string; 
-  porcentajeTitularidad?: number;
+  nombre: string;
+  apellido: string;
+  dni?: string;
   cuit?: string; 
-  idInmueble?: number;
+  idExpediente?: number;
   idPersona?: number;
 }

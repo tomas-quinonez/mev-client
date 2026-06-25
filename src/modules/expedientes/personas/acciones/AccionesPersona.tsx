@@ -7,6 +7,8 @@ import {
 import ButtonDrawer from "@components/button/ButtonDrawer";
 import ExpedientesPersona from "./ExpedientesPersona";
 import PersonaForm from "./EditarPersona";
+import { Suspense } from "react";
+import EliminarPersona from "./EliminarPersona";
 
 interface Props {
   persona: PersonaDTO;
@@ -45,6 +47,15 @@ export default function AccionesExpediente({
           )}
         />
       ),
+    },
+    {
+      key: "eliminarOrganismo",
+      label: (
+        <Suspense fallback={<div>Loading...</div>}>
+          <EliminarPersona idPersona={persona.id} afterCrud={afterCrud} />
+        </Suspense>
+      ),
+      danger: true,
     },
   ];
 
