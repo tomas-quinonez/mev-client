@@ -1,6 +1,6 @@
 import { HomeOutlined, SettingOutlined } from "@ant-design/icons";
 import { configuracionRoutes } from "@modules/configuracion/routes";
-import { inmueblesRoutes } from "@modules/inmuebles/routes";
+import { expedientesRoutes } from "@modules/expedientes/routes";
 import { MenuProps } from "antd";
 import React from "react";
 import { NavLink } from "react-router-dom";
@@ -28,28 +28,27 @@ export function getSideBarItems() {
       children: subItems,
     });
   }
-  const inmuebles = inmueblesRoutes;
-  if (inmuebles) {
+  const expedientes = expedientesRoutes;
+  if (expedientes) {
     subItems = [];
-    for (const item of inmuebles.children) { 
-      if (item.path && !item.path.startsWith("ver/:idInmueble")) {
+    for (const item of expedientes.children) {
+      if (item.path && !item.path.startsWith("ver/:idExpediente")) {
         subItems.push({
           icon: item.icon ?? undefined,
           label: item.path,
-          url: item.path ? `/inmuebles/${item.path}` : "/inmuebles",
+          url: item.path ? `/expedientes/${item.path}` : "/expedientes",
         });
       }
     }
 
     items.push({
       icon: HomeOutlined,
-      label: "Inmuebles",
-      key: "/inmuebles",
+      label: "Expedientes",
+      key: "/expedientes",
       children: subItems,
     });
   }
 
- 
   const itemsAntd: MenuProps["items"] = items.map((item) => {
     return {
       key: item.key,

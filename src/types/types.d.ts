@@ -39,3 +39,13 @@ interface FueroDTO {
   nombre: string;
   codigo: string;
 }
+
+interface TipoExpedienteDTO {
+  id: number;
+  nombre: string;
+}
+
+interface TipoVinculoDTO {
+  id: number;
+  descripcion: string;
+}

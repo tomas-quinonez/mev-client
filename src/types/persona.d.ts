@@ -13,12 +13,19 @@ interface FiltrosPersona {
   dni?: string;
 }
 
-interface InputPersona  {
+interface InputPersona {
   id?: number;
   nombre: string;
   apellido: string;
   dni?: string;
-  cuit?: string; 
+  cuit?: string;
   idExpediente?: number;
+  idPersona?: number;
+}
+
+interface InputPersonaExpediente extends InputPersona {
+  busquedaPersona?: any;
+  idExpediente?: number;
+  idTipoVinculo?: number;
   idPersona?: number;
 }
