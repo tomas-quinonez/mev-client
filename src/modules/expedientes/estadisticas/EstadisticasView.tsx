@@ -57,7 +57,7 @@ export default function EstadisticasView() {
 
   return (
     <>
-      <h3>Estadísticas por Año y Departamento</h3>
+      <h3>Estadísticas por Año y Ciudad y Fuero</h3>
       <Column {...config} />
     </>
   );
