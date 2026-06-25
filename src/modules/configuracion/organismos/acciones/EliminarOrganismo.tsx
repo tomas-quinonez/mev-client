@@ -10,7 +10,7 @@ declare interface Props {
 
 const showPromiseConfirm = (onConfirm: () => Promise<void>) => {
   Modal.confirm({
-    title: "Elimnar Organismo",
+    title: "Eliminar Organismo",
     content: "¿Está seguro que desea eliminar el organismo?",
     onOk: onConfirm,
     okCancel: true,
