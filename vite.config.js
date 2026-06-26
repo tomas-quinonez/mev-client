@@ -12,7 +12,7 @@ export default defineConfig(function (_a) {
     return {
         plugins: [react(), visualizer()],
         server: {
-            port: Number.parseInt("9001"),
+            port: parseInt("9001"),
         },
         base: "/mev-client",
         resolve: {

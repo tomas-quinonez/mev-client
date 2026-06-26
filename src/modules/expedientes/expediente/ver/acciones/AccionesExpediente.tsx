@@ -10,10 +10,7 @@ interface Props {
   afterCrud: () => void;
 }
 
-export default function AccionesExpediente({
-  expediente,
-  afterCrud,
-}: Readonly<Props>) {
+export default function AccionesExpediente({ expediente }: Readonly<Props>) {
   const navigate = useNavigate();
 
   const items: MenuProps["items"] = [
